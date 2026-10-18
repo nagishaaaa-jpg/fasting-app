@@ -7,6 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="AKITO断食" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="AKITO断食" />
   <meta name="theme-color" content="#0B1120" />
 
   <!-- Custom Embedded App Icon (Favicon & Apple Touch Icon - Dark Slate + Glowing Cyan Ring + Orange Flame) -->
@@ -129,9 +131,15 @@
           </div>
           <span class="text-xs font-extrabold tracking-wider text-slate-300">AKITO FASTING & BODY</span>
         </div>
-        <button onclick="openStageGuideModal()" class="tap-btn px-2.5 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-[11px] font-bold text-slate-300 flex items-center gap-1 shadow-sm">
-          <span>🔥 ステージ解説</span>
-        </button>
+        <div class="flex items-center gap-1.5">
+          <!-- Chrome PWA Install Button (Shown automatically when installable) -->
+          <button id="pwaInstallHeaderBtn" onclick="triggerPwaInstall()" class="hidden tap-btn px-2.5 py-1 rounded-full bg-gradient-to-r from-[#38BDF8] to-[#10B981] text-slate-950 text-[11px] font-black items-center gap-1 shadow-md">
+            <span>📲 アプリ保存</span>
+          </button>
+          <button onclick="openStageGuideModal()" class="tap-btn px-2.5 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-[11px] font-bold text-slate-300 flex items-center gap-1 shadow-sm">
+            <span>🔥 ステージ解説</span>
+          </button>
+        </div>
       </div>
 
       <!-- Plan Selector Pill -->
@@ -600,23 +608,35 @@
       </div>
 
       <!-- Embedded App Icon Preview & Home Screen Guide -->
-      <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 flex items-center gap-3.5">
-        <div class="w-16 h-16 rounded-2xl shrink-0 overflow-hidden shadow-xl border border-sky-400/30 bg-slate-950 flex items-center justify-center">
-          <svg viewBox="0 0 512 512" class="w-full h-full">
-            <rect width="512" height="512" rx="116" fill="#0F172A"/>
-            <rect x="22" y="22" width="468" height="468" rx="98" fill="none" stroke="#38BDF8" stroke-width="8" stroke-opacity="0.5"/>
-            <circle cx="256" cy="256" r="164" fill="none" stroke="#1E293B" stroke-width="30"/>
-            <path d="M 225 95 A 164 164 0 1 0 385 355" fill="none" stroke="#38BDF8" stroke-width="26" stroke-linecap="round"/>
-            <path d="M 287 95 A 164 164 0 0 1 410 312" fill="none" stroke="#FF5722" stroke-width="28" stroke-linecap="round"/>
-            <path d="M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z" fill="#FF5722"/>
-          </svg>
+      <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 space-y-3">
+        <div class="flex items-center gap-3.5">
+          <div class="w-16 h-16 rounded-2xl shrink-0 overflow-hidden shadow-xl border border-sky-400/30 bg-slate-950 flex items-center justify-center">
+            <svg viewBox="0 0 512 512" class="w-full h-full">
+              <rect width="512" height="512" rx="116" fill="#0F172A"/>
+              <rect x="22" y="22" width="468" height="468" rx="98" fill="none" stroke="#38BDF8" stroke-width="8" stroke-opacity="0.5"/>
+              <circle cx="256" cy="256" r="164" fill="none" stroke="#1E293B" stroke-width="30"/>
+              <path d="M 225 95 A 164 164 0 1 0 385 355" fill="none" stroke="#38BDF8" stroke-width="26" stroke-linecap="round"/>
+              <path d="M 287 95 A 164 164 0 0 1 410 312" fill="none" stroke="#FF5722" stroke-width="28" stroke-linecap="round"/>
+              <path d="M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z" fill="#FF5722"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <span class="text-[10px] font-black px-2 py-0.5 rounded bg-[#10B981]/20 text-[#10B981]">Chrome PWA アプリ化対応✨</span>
+            <h3 class="text-xs font-black text-white mt-1">Chromeで「アプリとしてインストール」</h3>
+            <p class="text-[11px] text-slate-400 leading-snug mt-0.5">
+              アドレスバーが消えて全画面の本物アプリとして動作します📱
+            </p>
+          </div>
         </div>
-        <div class="flex-1 min-w-0">
-          <span class="text-[10px] font-black px-2 py-0.5 rounded bg-[#38BDF8]/20 text-[#38BDF8]">アイコン埋め込み済み✨</span>
-          <h3 class="text-xs font-black text-white mt-1">スマホのホーム画面に追加対応</h3>
-          <p class="text-[11px] text-slate-400 leading-snug mt-0.5">
-            SafariやChromeのメニューから「ホーム画面に追加」すると、左の専用アイコンで本物のアプリのように起動できます📱
-          </p>
+
+        <button id="pwaInstallSettingsBtn" onclick="triggerPwaInstall()" class="tap-btn w-full py-3 rounded-2xl bg-gradient-to-r from-[#38BDF8] to-[#10B981] text-slate-950 font-black text-xs shadow-lg flex items-center justify-center gap-1.5">
+          <span>📲 Chromeにアプリとしてインストールする</span>
+        </button>
+
+        <div class="bg-slate-900/90 rounded-2xl p-3 border border-slate-700/70 text-[11px] text-slate-300 space-y-1">
+          <p class="font-black text-[#38BDF8]">💡 Chromeでのインストール手順：</p>
+          <p>① 上の<b>「📲 Chromeにアプリとしてインストールする」</b>ボタンを押すか、Chrome右上のメニュー<b>「︙」</b>をタップ。</p>
+          <p>② <b>「ホーム画面に追加」</b>または<b>「アプリをインストール」</b>を選ぶと、専用アイコンでアプリ化されます！</p>
         </div>
       </div>
 
@@ -2150,8 +2170,115 @@
       }
     });
 
+    // ============================================================================
+    // CHROME PWA (PROGRESSIVE WEB APP) INSTALLER & DYNAMIC MANIFEST / SW
+    // ============================================================================
+    let deferredPwaPrompt = null;
+
+    // 1. Canvasを使って192x192と512x512のPNGアイコンを自動生成し、Web App Manifestを動的に注入する
+    function setupDynamicPwaManifest() {
+      try {
+        const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <rect width="512" height="512" rx="116" fill="#0F172A"/>
+          <rect x="22" y="22" width="468" height="468" rx="98" fill="none" stroke="#38BDF8" stroke-width="10" stroke-opacity="0.55"/>
+          <circle cx="256" cy="256" r="164" fill="none" stroke="#1E293B" stroke-width="32"/>
+          <path d="M 225 95 A 164 164 0 1 0 385 355" fill="none" stroke="#38BDF8" stroke-width="28" stroke-linecap="round"/>
+          <path d="M 287 95 A 164 164 0 0 1 410 312" fill="none" stroke="#FF5722" stroke-width="30" stroke-linecap="round"/>
+          <path d="M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z" fill="#FF5722"/>
+        </svg>`;
+
+        const svgDataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
+        const img = new Image();
+        img.onload = function() {
+          const createPngUrl = (size) => {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, size, size);
+            return canvas.toDataURL('image/png');
+          };
+
+          const icon192 = createPngUrl(192);
+          const icon512 = createPngUrl(512);
+
+          // Apple Touch Icon等も高解像度PNGに更新
+          const appleLink = document.querySelector('link[rel="apple-touch-icon"]');
+          if (appleLink) appleLink.href = icon192;
+
+          const manifestObj = {
+            name: 'AKITO FASTING & BODY',
+            short_name: 'AKITO断食',
+            description: '16時間断食タイマー＆ワンタップカロリー・たんぱく質管理アプリ',
+            start_url: window.location.href.split('#')[0],
+            scope: './',
+            display: 'standalone',
+            orientation: 'portrait',
+            background_color: '#0B1120',
+            theme_color: '#0B1120',
+            icons: [
+              { src: icon192, sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+              { src: icon512, sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+            ]
+          };
+
+          const manifestBlob = new Blob([JSON.stringify(manifestObj)], { type: 'application/manifest+json' });
+          const manifestUrl = URL.createObjectURL(manifestBlob);
+          const linkEl = document.createElement('link');
+          linkEl.rel = 'manifest';
+          linkEl.href = manifestUrl;
+          document.head.appendChild(linkEl);
+        };
+        img.src = svgDataUrl;
+      } catch (err) {
+        console.warn('Manifest setup skipped:', err);
+      }
+
+      // 2. Service Workerの登録（ChromeのPWAインストール条件を満たすため）
+      if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+        const swCode = `
+          self.addEventListener('install', (e) => self.skipWaiting());
+          self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
+          self.addEventListener('fetch', (e) => {});
+        `;
+        try {
+          const swBlob = new Blob([swCode], { type: 'application/javascript' });
+          const swUrl = URL.createObjectURL(swBlob);
+          navigator.serviceWorker.register(swUrl).catch(() => {});
+        } catch (e) {}
+      }
+    }
+
+    // Chromeのインストールプロンプトを検知したらヘッダーの「📲 アプリ保存」ボタンを表示
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPwaPrompt = e;
+      const headerBtn = document.getElementById('pwaInstallHeaderBtn');
+      if (headerBtn) {
+        headerBtn.classList.remove('hidden');
+        headerBtn.classList.add('flex');
+      }
+    });
+
+    async function triggerPwaInstall() {
+      if (deferredPwaPrompt) {
+        deferredPwaPrompt.prompt();
+        const { outcome } = await deferredPwaPrompt.userChoice;
+        if (outcome === 'accepted') {
+          showToast('🎉 アプリのインストールを開始しました！');
+          const headerBtn = document.getElementById('pwaInstallHeaderBtn');
+          if (headerBtn) headerBtn.classList.add('hidden');
+        }
+        deferredPwaPrompt = null;
+      } else {
+        showToast('💡 Chrome右上の「︙」＞「ホーム画面に追加（アプリをインストール）」から保存できます📱');
+        switchTab('settings');
+      }
+    }
+
     window.onload = function() {
       loadState();
+      setupDynamicPwaManifest();
       renderStatic24HourDial();
       updateFastingTimerUI();
       updateMiniBridgeCard();
