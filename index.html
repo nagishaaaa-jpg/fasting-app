@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>AKITO FASTING & BODY | 16時間断食＆ボディメイク管理</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AKITO断食" />
+  <meta name="theme-color" content="#0B1120" />
+
+  <!-- Custom Embedded App Icon (Favicon & Apple Touch Icon - Dark Slate + Glowing Cyan Ring + Orange Flame) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%231E293B'/%3E%3Cstop offset='50%25' stop-color='%230F172A'/%3E%3Cstop offset='100%25' stop-color='%23090D16'/%3E%3C/linearGradient%3E%3ClinearGradient id='flame' x1='0%25' y1='100%25' x2='0%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23EA580C'/%3E%3Cstop offset='60%25' stop-color='%23FF5722'/%3E%3Cstop offset='100%25' stop-color='%23FDBA74'/%3E%3C/linearGradient%3E%3Cfilter id='glowCyan' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%2338BDF8' flood-opacity='0.85'/%3E%3C/filter%3E%3Cfilter id='glowOrange' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='12' flood-color='%23FF5722' flood-opacity='0.9'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='512' height='512' rx='116' fill='url(%23bg)'/%3E%3Crect x='22' y='22' width='468' height='468' rx='98' fill='none' stroke='%2338BDF8' stroke-width='4' stroke-opacity='0.45'/%3E%3Ccircle cx='256' cy='256' r='164' fill='none' stroke='%231E293B' stroke-width='30'/%3E%3Cpath d='M 225 95 A 164 164 0 1 0 385 355' fill='none' stroke='%2338BDF8' stroke-width='26' stroke-linecap='round' filter='url(%23glowCyan)'/%3E%3Cpath d='M 287 95 A 164 164 0 0 1 410 312' fill='none' stroke='%23FF5722' stroke-width='28' stroke-linecap='round' filter='url(%23glowOrange)'/%3E%3Cpath d='M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z' fill='url(%23flame)' filter='url(%23glowOrange)'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%231E293B'/%3E%3Cstop offset='50%25' stop-color='%230F172A'/%3E%3Cstop offset='100%25' stop-color='%23090D16'/%3E%3C/linearGradient%3E%3ClinearGradient id='flame' x1='0%25' y1='100%25' x2='0%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23EA580C'/%3E%3Cstop offset='60%25' stop-color='%23FF5722'/%3E%3Cstop offset='100%25' stop-color='%23FDBA74'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='116' fill='url(%23bg)'/%3E%3Crect x='22' y='22' width='468' height='468' rx='98' fill='none' stroke='%2338BDF8' stroke-width='6' stroke-opacity='0.5'/%3E%3Ccircle cx='256' cy='256' r='164' fill='none' stroke='%231E293B' stroke-width='30'/%3E%3Cpath d='M 225 95 A 164 164 0 1 0 385 355' fill='none' stroke='%2338BDF8' stroke-width='26' stroke-linecap='round'/%3E%3Cpath d='M 287 95 A 164 164 0 0 1 410 312' fill='none' stroke='%23FF5722' stroke-width='28' stroke-linecap='round'/%3E%3Cpath d='M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z' fill='url(%23flame)'/%3E%3C/svg%3E" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +22,10 @@
       --bg-base: #0B1120;
       --bg-surface: #0F172A;
       --bg-card: #1E293B;
-      --bg-card-hover: #263449;
-      --border-subtle: #334155;
       --accent-orange: #FF5722;
       --accent-cyan: #38BDF8;
       --accent-pink: #F43F5E;
       --accent-emerald: #10B981;
-      --text-main: #F8FAFC;
-      --text-sub: #94A3B8;
     }
 
     * {
@@ -31,7 +36,7 @@
     body {
       font-family: 'Noto Sans JP', 'Inter', sans-serif;
       background-color: #060913;
-      color: var(--text-main);
+      color: #F8FAFC;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
@@ -42,7 +47,6 @@
       font-variant-numeric: tabular-nums;
     }
 
-    /* Smartphone App Container */
     .app-shell {
       max-width: 480px;
       min-height: 100dvh;
@@ -57,15 +61,13 @@
       border-right: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* Tactile Button Effect */
     .tap-btn {
-      transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, box-shadow 0.15s ease;
     }
     .tap-btn:active {
       transform: scale(0.95);
     }
 
-    /* Custom Dark Scrollbar */
     ::-webkit-scrollbar {
       width: 4px;
       height: 4px;
@@ -78,7 +80,6 @@
       border-radius: 9999px;
     }
 
-    /* Toast Notification Animation */
     @keyframes toastSlideDown {
       0% { transform: translate(-50%, -120%); opacity: 0; }
       14% { transform: translate(-50%, 0); opacity: 1; }
@@ -89,10 +90,9 @@
       animation: toastSlideDown 2.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
-    /* Subtle Glow Animations */
     @keyframes glowPulse {
       0%, 100% { box-shadow: 0 0 15px rgba(255, 87, 34, 0.25); }
-      50% { box-shadow: 0 0 26px rgba(255, 87, 34, 0.45); }
+      50% { box-shadow: 0 0 26px rgba(255, 87, 34, 0.48); }
     }
     .glow-orange {
       animation: glowPulse 3s infinite ease-in-out;
@@ -100,7 +100,7 @@
 
     @keyframes glowPinkPulse {
       0%, 100% { box-shadow: 0 0 15px rgba(244, 63, 94, 0.25); }
-      50% { box-shadow: 0 0 26px rgba(244, 63, 94, 0.45); }
+      50% { box-shadow: 0 0 26px rgba(244, 63, 94, 0.48); }
     }
     .glow-pink {
       animation: glowPinkPulse 3s infinite ease-in-out;
@@ -118,21 +118,23 @@
 
   <div class="app-shell">
 
-    <!-- ==================== TAB 1: ⏱️ 断食タイマー ==================== -->
+    <!-- ==================== TAB 1: 🔥 断食タイマー ==================== -->
     <main id="tab-timer" class="flex-1 px-5 pt-4 pb-6 flex flex-col items-center">
       
-      <!-- Top Header -->
+      <!-- Top Header with Embedded Mini App Icon -->
       <div class="w-full flex items-center justify-between mb-3">
-        <div class="flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-[#FF5722] animate-ping"></span>
-          <span class="text-xs font-extrabold tracking-wider text-slate-400">AKITO FASTING & BODY</span>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-lg bg-slate-800 border border-sky-400/40 flex items-center justify-center shadow-sm">
+            <span class="text-xs">🔥</span>
+          </div>
+          <span class="text-xs font-extrabold tracking-wider text-slate-300">AKITO FASTING & BODY</span>
         </div>
         <button onclick="openStageGuideModal()" class="tap-btn px-2.5 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-[11px] font-bold text-slate-300 flex items-center gap-1 shadow-sm">
           <span>🔥 ステージ解説</span>
         </button>
       </div>
 
-      <!-- Plan Selector Pill & Mode Status -->
+      <!-- Plan Selector Pill -->
       <div class="relative mb-3">
         <button onclick="togglePlanDropdown()" class="tap-btn bg-slate-800/90 hover:bg-slate-800 border border-slate-700/80 px-5 py-2 rounded-2xl flex items-center gap-2.5 shadow-lg">
           <span id="planHoursBadge" class="bg-gradient-to-br from-[#FF5722] to-[#F97316] text-white font-black text-2xl px-2.5 py-0.5 rounded-xl tabular-nums leading-tight shadow-md">16</span>
@@ -227,13 +229,13 @@
         </svg>
       </div>
 
-      <!-- Remaining Time / Next Window Pill (Feature #5 integrated) -->
+      <!-- Remaining Time / Next Window Pill -->
       <div id="remainingPillBox" class="bg-slate-800/90 border border-slate-700 px-6 py-1.5 rounded-full flex items-center justify-center gap-3 mb-3.5 min-w-[240px] shadow-md">
         <span id="remainingLabel" class="text-xs font-extrabold text-slate-400">断食終了まで残り</span>
         <span id="remainingTimer" class="text-base font-black text-[#38BDF8] tabular-nums">14:10:48</span>
       </div>
 
-      <!-- FEATURE #1: Real-Time Body Commentary Banner -->
+      <!-- Real-Time Body Commentary Banner -->
       <div onclick="openStageGuideModal()" class="tap-btn cursor-pointer w-full bg-gradient-to-r from-slate-800/95 via-slate-800/90 to-slate-800/95 border border-slate-700/90 rounded-2xl p-3.5 mb-4 shadow-lg relative overflow-hidden">
         <div class="flex items-start gap-3">
           <div id="stageBannerIconBox" class="w-11 h-11 rounded-2xl bg-[#FF5722]/20 border border-[#FF5722]/40 flex items-center justify-center text-2xl shrink-0">
@@ -241,11 +243,11 @@
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center justify-between gap-2">
-              <span id="stageBannerTitle" class="text-xs font-black text-[#FF5722] tracking-wide">STAGE 1 : 消化・吸収タイム</span>
+              <span id="stageBannerTitle" class="text-xs font-black text-[#FF5722] tracking-wide">STAGE 1 : 消化吸収タイム</span>
               <span id="stageBannerNextBadge" class="text-[10px] font-bold bg-slate-900/90 text-slate-300 px-2 py-0.5 rounded-md tabular-nums">脂肪燃焼まであと10h</span>
             </div>
             <p id="stageBannerDesc" class="text-xs font-bold text-slate-200 mt-1 leading-relaxed">
-              食後の血糖値が落ち着き、消化が進んでいます。お水やお茶で水分補給しましょう💧
+              消化吸収タイム🍽️ 血糖値が落ち着いてきています
             </p>
           </div>
         </div>
@@ -278,10 +280,10 @@
         </div>
       </div>
 
-      <!-- Main Action Buttons Row (Feature #5 Phase Transition) -->
+      <!-- Main Action Buttons Row -->
       <div class="w-full flex items-center gap-2.5 mb-4">
         <button id="mainFastingActionBtn" onclick="handleMainFastingAction()" class="tap-btn glow-orange flex-1 bg-gradient-to-r from-[#FF5722] to-[#F97316] hover:from-[#F4511E] hover:to-[#EA580C] text-white font-black text-base py-3.5 rounded-2xl shadow-lg flex items-center justify-center gap-2">
-          <span>🍽️ 断食を終了して食事時間へ</span>
+          <span>🍽️ 断食を終了（食事時間を開始）</span>
         </button>
         <button onclick="resetFastingTimer()" class="tap-btn px-3.5 py-3.5 rounded-2xl border border-slate-700 bg-slate-800/80 text-slate-300 font-bold text-xs hover:bg-slate-700 whitespace-nowrap">
           リセット
@@ -306,7 +308,7 @@
               </p>
               <p class="text-sm font-black text-[#10B981] tabular-nums">
                 P: <span id="miniProteinNow">0</span>
-                <span class="text-[11px] font-bold text-slate-400">/ <span id="miniProteinTarget">110</span> g</span>
+                <span class="text-[11px] font-bold text-slate-400">/ <span id="miniProteinTarget">120</span> g</span>
               </p>
             </div>
           </div>
@@ -321,7 +323,7 @@
 
     </main>
 
-    <!-- ==================== TAB 2: 🥗 カロリー＆P (ワンタップ記録) ==================== -->
+    <!-- ==================== TAB 2: 🥗 カロリー＆P記録 (ワンタップ記録) ==================== -->
     <main id="tab-calorie" class="hidden flex-1 px-4 pt-4 pb-6 flex flex-col">
       
       <!-- Top Date Navigation Header -->
@@ -371,8 +373,8 @@
             </div>
             <div class="text-right tabular-nums">
               <span id="proCurrentVal" class="text-2xl font-black text-[#10B981]">0.0</span>
-              <span class="text-xs font-bold text-slate-400"> / <span id="proTargetVal">110</span> g</span>
-              <span id="proRemainBadge" class="ml-1.5 text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-[#10B981]/20 text-[#10B981]">あと 110.0 g</span>
+              <span class="text-xs font-bold text-slate-400"> / <span id="proTargetVal">120</span> g</span>
+              <span id="proRemainBadge" class="ml-1.5 text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-[#10B981]/20 text-[#10B981]">あと 120.0 g</span>
             </div>
           </div>
           <div class="w-full h-3.5 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-700/60">
@@ -389,7 +391,7 @@
             <span class="text-[10px] font-normal text-slate-400">(タップで即追加)</span>
           </h3>
           <button onclick="openCustomStampModal()" class="tap-btn text-xs font-extrabold text-[#38BDF8] bg-[#38BDF8]/15 border border-[#38BDF8]/30 px-2.5 py-1 rounded-xl">
-            ＋ 定番ボタン追加
+            ＋定番ボタン追加
           </button>
         </div>
 
@@ -404,10 +406,7 @@
         <h3 class="text-xs font-extrabold text-slate-300 mb-2">🔢 ざっくり加算（コンビニ・外食で計算が面倒な時）</h3>
         
         <!-- Rough Calories -->
-        <div class="grid grid-cols-4 gap-1.5 mb-2">
-          <button onclick="addQuickEntry('ざっくり +50kcal', 50, 0, '🔥')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-2 text-center">
-            <span class="block text-xs font-black text-[#FF5722] tabular-nums">+50 kcal</span>
-          </button>
+        <div class="grid grid-cols-3 gap-1.5 mb-2">
           <button onclick="addQuickEntry('ざっくり +100kcal', 100, 0, '🔥')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-2 text-center">
             <span class="block text-xs font-black text-[#FF5722] tabular-nums">+100 kcal</span>
           </button>
@@ -420,11 +419,7 @@
         </div>
 
         <!-- Rough Protein -->
-        <div class="grid grid-cols-3 gap-1.5">
-          <button onclick="addQuickEntry('たんぱく質 +5g', 20, 5, '💪')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-1.5 text-center">
-            <span class="text-xs font-black text-[#10B981] tabular-nums">P +5g</span>
-            <span class="block text-[9px] text-slate-400">(+20kcal)</span>
-          </button>
+        <div class="grid grid-cols-2 gap-1.5">
           <button onclick="addQuickEntry('たんぱく質 +10g', 40, 10, '💪')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-1.5 text-center">
             <span class="text-xs font-black text-[#10B981] tabular-nums">P +10g</span>
             <span class="block text-[9px] text-slate-400">(+40kcal)</span>
@@ -449,7 +444,7 @@
 
     </main>
 
-    <!-- ==================== TAB 3: 📅 カレンダー＆体重 (FEATURE #4) ==================== -->
+    <!-- ==================== TAB 3: 📅 カレンダー＆体重 ==================== -->
     <main id="tab-calendar" class="hidden flex-1 px-4 pt-4 pb-6 flex flex-col">
       
       <div class="text-center mb-3">
@@ -457,7 +452,7 @@
         <p class="text-[11px] font-bold text-slate-400">キーボード入力不要！±ボタンで今日の体重を1秒記録⚖️</p>
       </div>
 
-      <!-- FEATURE #4: Zero-Typing Weight Stepper Card -->
+      <!-- Zero-Typing Weight Stepper Card -->
       <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/90 mb-4">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center gap-1.5">
@@ -492,11 +487,11 @@
         </div>
 
         <button onclick="commitStepperWeight()" class="tap-btn w-full bg-gradient-to-r from-[#38BDF8] to-[#10B981] text-slate-950 font-black text-sm py-3 rounded-2xl shadow-md flex items-center justify-center gap-1.5">
-          <span>✨ この体重を記録する</span>
+          <span>✨ 今日の体重を記録</span>
         </button>
       </div>
 
-      <!-- FEATURE #4: Weight Trend Mini Line Chart -->
+      <!-- Weight Trend Mini Line Chart -->
       <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 mb-4">
         <div class="flex items-center justify-between mb-2">
           <h3 class="text-xs font-extrabold text-slate-300 flex items-center gap-1">
@@ -527,14 +522,12 @@
 
       <!-- Calendar Box -->
       <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 mb-4">
-        <!-- Month Switcher -->
         <div class="flex items-center justify-between mb-3">
           <button onclick="changeCalendarMonth(-1)" class="tap-btn w-8 h-8 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center font-bold text-slate-200">‹</button>
           <h3 id="calendarMonthLabel" class="text-base font-black text-white tabular-nums">2026年 10月</h3>
           <button onclick="changeCalendarMonth(1)" class="tap-btn w-8 h-8 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center font-bold text-slate-200">›</button>
         </div>
 
-        <!-- Weekdays Header -->
         <div class="grid grid-cols-7 text-center text-[11px] font-bold text-slate-400 mb-1.5">
           <span class="text-[#F43F5E]">日</span>
           <span>月</span>
@@ -545,12 +538,8 @@
           <span class="text-[#38BDF8]">土</span>
         </div>
 
-        <!-- Days Grid -->
-        <div id="calendarGrid" class="grid grid-cols-7 gap-1">
-          <!-- Populated dynamically -->
-        </div>
+        <div id="calendarGrid" class="grid grid-cols-7 gap-1"></div>
 
-        <!-- Legend -->
         <div class="flex items-center justify-center gap-4 mt-3 pt-2.5 border-t border-slate-700/70 text-[10px] font-bold text-slate-400">
           <span class="flex items-center gap-1">🔥 断食達成</span>
           <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#10B981] inline-block"></span>目標カロリー内</span>
@@ -589,7 +578,28 @@
       
       <div class="text-center mb-1">
         <h2 class="text-base font-black text-white">目標設定・データ管理</h2>
-        <p class="text-[11px] font-bold text-slate-400">あきとさん専用の目標値とバックアップ管理</p>
+        <p class="text-[11px] font-bold text-slate-400">あきとさん専用の目標値・アイコン・バックアップ管理</p>
+      </div>
+
+      <!-- Embedded App Icon Preview & Home Screen Guide -->
+      <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 flex items-center gap-3.5">
+        <div class="w-16 h-16 rounded-2xl shrink-0 overflow-hidden shadow-xl border border-sky-400/30 bg-slate-950 flex items-center justify-center">
+          <svg viewBox="0 0 512 512" class="w-full h-full">
+            <rect width="512" height="512" rx="116" fill="#0F172A"/>
+            <rect x="22" y="22" width="468" height="468" rx="98" fill="none" stroke="#38BDF8" stroke-width="8" stroke-opacity="0.5"/>
+            <circle cx="256" cy="256" r="164" fill="none" stroke="#1E293B" stroke-width="30"/>
+            <path d="M 225 95 A 164 164 0 1 0 385 355" fill="none" stroke="#38BDF8" stroke-width="26" stroke-linecap="round"/>
+            <path d="M 287 95 A 164 164 0 0 1 410 312" fill="none" stroke="#FF5722" stroke-width="28" stroke-linecap="round"/>
+            <path d="M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z" fill="#FF5722"/>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <span class="text-[10px] font-black px-2 py-0.5 rounded bg-[#38BDF8]/20 text-[#38BDF8]">アイコン埋め込み済み✨</span>
+          <h3 class="text-xs font-black text-white mt-1">スマホのホーム画面に追加対応</h3>
+          <p class="text-[11px] text-slate-400 leading-snug mt-0.5">
+            SafariやChromeのメニューから「ホーム画面に追加」すると、左の専用アイコンで本物のアプリのように起動できます📱
+          </p>
+        </div>
       </div>
 
       <!-- Daily Goal Settings -->
@@ -615,11 +625,11 @@
         <div>
           <div class="flex justify-between text-xs font-bold mb-1.5">
             <span class="text-slate-300">1日の目標たんぱく質</span>
-            <span class="text-[#10B981] font-black tabular-nums"><span id="settingProLabel">110</span> g</span>
+            <span class="text-[#10B981] font-black tabular-nums"><span id="settingProLabel">120</span> g</span>
           </div>
           <div class="flex items-center gap-2">
             <button onclick="adjustTargetPro(-5)" class="tap-btn w-9 h-9 rounded-xl bg-slate-900 border border-slate-700 font-black text-white">-</button>
-            <input id="settingProRange" type="range" min="40" max="220" step="5" value="110" oninput="updateTargetPro(this.value)" class="flex-1" />
+            <input id="settingProRange" type="range" min="40" max="220" step="5" value="120" oninput="updateTargetPro(this.value)" class="flex-1" />
             <button onclick="adjustTargetPro(5)" class="tap-btn w-9 h-9 rounded-xl bg-slate-900 border border-slate-700 font-black text-white">+</button>
           </div>
         </div>
@@ -653,7 +663,7 @@
       <!-- Data Backup & Restore -->
       <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 space-y-3">
         <h3 class="text-sm font-black text-white">💾 バックアップと復元</h3>
-        <p class="text-xs text-slate-400">ブラウザのキャッシュ削除や機種変更に備えて、全データをファイル保存またはテキストコピーできます。</p>
+        <p class="text-xs text-slate-400">ブラウザのキャッシュ削除や機種変更に備えて、全データをJSONファイル保存または文字列コピーできます。</p>
         
         <div class="grid grid-cols-2 gap-2">
           <button onclick="exportBackupJson()" class="tap-btn bg-[#FF5722] text-white font-black text-xs py-3 rounded-xl shadow-md">
@@ -680,10 +690,8 @@
 
     </main>
 
-    <!-- ==================== BOTTOM NAVIGATION BAR (Dark Mode) ==================== -->
+    <!-- ==================== BOTTOM NAVIGATION BAR ==================== -->
     <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-2 py-2 flex items-center justify-around z-40">
-      
-      <!-- Tab 1: Timer -->
       <button onclick="switchTab('timer')" id="nav-timer" class="tap-btn flex-1 flex flex-col items-center justify-center py-1 text-[#FF5722]">
         <svg class="w-6 h-6 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
           <circle cx="12" cy="13" r="8"></circle>
@@ -695,7 +703,6 @@
         <span class="text-[10px] font-extrabold">断食タイマー</span>
       </button>
 
-      <!-- Tab 2: Calorie & Protein -->
       <button onclick="switchTab('calorie')" id="nav-calorie" class="tap-btn flex-1 flex flex-col items-center justify-center py-1 text-slate-500">
         <svg class="w-6 h-6 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -703,7 +710,6 @@
         <span class="text-[10px] font-extrabold">カロリー＆P</span>
       </button>
 
-      <!-- Tab 3: Calendar & Weight -->
       <button onclick="switchTab('calendar')" id="nav-calendar" class="tap-btn flex-1 flex flex-col items-center justify-center py-1 text-slate-500">
         <svg class="w-6 h-6 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
           <rect x="3" y="4" width="18" height="18" rx="3"></rect>
@@ -713,7 +719,6 @@
         <span class="text-[10px] font-extrabold">カレンダー＆体重</span>
       </button>
 
-      <!-- Tab 4: Settings -->
       <button onclick="switchTab('settings')" id="nav-settings" class="tap-btn flex-1 flex flex-col items-center justify-center py-1 text-slate-500">
         <svg class="w-6 h-6 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
           <circle cx="12" cy="12" r="3"></circle>
@@ -731,7 +736,6 @@
       <h3 class="text-base font-black text-white mb-1">⏰ 開始時刻の調整</h3>
       <p class="text-xs text-slate-400 mb-4">「昨日の夜20時から食べ終えていた」など、遡って開始時刻を修正できます。</p>
 
-      <!-- Quick Presets -->
       <div class="grid grid-cols-2 gap-2 mb-4">
         <button onclick="setQuickStartMinutesAgo(30)" class="tap-btn bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl py-2 text-xs font-bold text-slate-200">
           30分前から
@@ -787,7 +791,6 @@
         </div>
       </div>
 
-      <!-- Delete existing custom stamps list -->
       <div class="mb-4 max-h-36 overflow-y-auto bg-slate-950/80 rounded-xl p-2 border border-slate-800">
         <p class="text-[10px] font-bold text-slate-400 mb-1.5">現在のボタン一覧（×で削除）</p>
         <div id="manageStampsList" class="space-y-1"></div>
@@ -800,7 +803,7 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL 3: 断食ステージ解説モーダル (Feature #1) ==================== -->
+  <!-- ==================== MODAL 3: 断食ステージ解説モーダル ==================== -->
   <div id="stageGuideModal" class="hidden fixed inset-0 bg-black/75 backdrop-blur-sm z-50 flex items-center justify-center p-4">
     <div class="bg-slate-900 w-full max-w-[380px] rounded-3xl p-5 shadow-2xl border border-slate-700 max-h-[85vh] overflow-y-auto">
       <div class="flex items-center justify-between mb-3">
@@ -812,42 +815,35 @@
           <span class="text-xl">🍽️</span>
           <div>
             <p class="font-black text-slate-200">0〜4時間：消化吸収タイム</p>
-            <p class="text-slate-400 mt-0.5">食後の血糖値が落ち着き、消化が進んでいます。まずは水やお茶でリラックス。</p>
+            <p class="text-slate-400 mt-0.5">食後の血糖値が落ち着いてきています。まずはお水やお茶で水分補給しましょう。</p>
           </div>
         </div>
         <div class="bg-slate-800/90 p-3 rounded-2xl border border-slate-700 flex items-start gap-2.5">
           <span class="text-xl">⚡</span>
           <div>
             <p class="font-black text-[#38BDF8]">4〜8時間：糖質エネルギー消費中</p>
-            <p class="text-slate-400 mt-0.5">インスリンが下がり、肝臓に蓄えた糖質（グリコーゲン）を使い始めます。</p>
+            <p class="text-slate-400 mt-0.5">インスリンが下がり、胃腸が休まり始めています。</p>
           </div>
         </div>
         <div class="bg-slate-800/90 p-3 rounded-2xl border border-slate-700 flex items-start gap-2.5">
-          <span class="text-xl">🌙</span>
+          <span class="text-xl">✨</span>
           <div>
-            <p class="font-black text-indigo-400">8〜12時間：成長ホルモン分泌準備</p>
-            <p class="text-slate-400 mt-0.5">胃腸がしっかり休まり、空腹感とともに体内のクリーンアップ準備が始まります。</p>
+            <p class="font-black text-indigo-400">8〜12時間：ホルモン準備モード</p>
+            <p class="text-slate-400 mt-0.5">成長ホルモンが分泌され始め、体内のクリーンアップ準備が進みます。</p>
           </div>
         </div>
         <div class="bg-slate-800/90 p-3 rounded-2xl border border-[#FF5722]/50 flex items-start gap-2.5">
           <span class="text-xl">🔥</span>
           <div>
             <p class="font-black text-[#FF5722]">12〜16時間：脂肪燃焼モード突入！</p>
-            <p class="text-slate-300 mt-0.5">時計の「🔥」マーク到達！糖質が枯渇し、体脂肪がエネルギーとして燃え始めます！</p>
+            <p class="text-slate-300 mt-0.5">時計の「🔥」マーク到達！体脂肪がエネルギーとして燃え始めました！</p>
           </div>
         </div>
         <div class="bg-slate-800/90 p-3 rounded-2xl border border-[#10B981]/50 flex items-start gap-2.5">
           <span class="text-xl">♻️</span>
           <div>
             <p class="font-black text-[#10B981]">16時間〜：オートファジー発動中！</p>
-            <p class="text-slate-300 mt-0.5">時計の「♻️」マーク到達！古くなった細胞が新しく生まれ変わるゴールデンタイムです✨</p>
-          </div>
-        </div>
-        <div class="bg-slate-800/90 p-3 rounded-2xl border border-[#F43F5E]/50 flex items-start gap-2.5">
-          <span class="text-xl">🥗</span>
-          <div>
-            <p class="font-black text-[#F43F5E]">食べていい時間（8時間ウィンドウ）</p>
-            <p class="text-slate-300 mt-0.5">プロテインや卵・お肉などでたんぱく質をしっかりチャージして筋肉と代謝を維持しましょう💪</p>
+            <p class="text-slate-300 mt-0.5">時計の「♻️」マーク到達！細胞が若返り、最高のコンディションです✨</p>
           </div>
         </div>
       </div>
@@ -857,16 +853,16 @@
 
   <script>
     // ============================================================================
-    // AKITO FASTING & BODY - DARK MODE STATE & PERSISTENCE
+    // AKITO FASTING & BODY - STATE & LOCALSTORAGE PERSISTENCE
     // ============================================================================
     const STORAGE_KEY = 'akito_fasting_body_v2';
 
     const DEFAULT_STAMPS = [
-      { id: 'st1', emoji: '🥛', name: 'プロテイン', kcal: 110, protein: 20.0 },
+      { id: 'st1', emoji: '🥛', name: 'プロテインドリンク', kcal: 110, protein: 20.0 },
       { id: 'st2', emoji: '🍙', name: 'おにぎり', kcal: 180, protein: 4.0 },
-      { id: 'st3', emoji: '🥚', name: 'たまご焼き(3個)', kcal: 260, protein: 18.0 },
+      { id: 'st3', emoji: '🥚', name: 'たまご焼き(3個)', kcal: 250, protein: 18.0 },
       { id: 'st4', emoji: '🍗', name: 'サラダチキン', kcal: 110, protein: 24.0 },
-      { id: 'st5', emoji: '🍜', name: 'にゅうめん', kcal: 280, protein: 9.0 },
+      { id: 'st5', emoji: '🍜', name: 'にゅうめん', kcal: 280, protein: 8.0 },
       { id: 'st6', emoji: '🥚', name: 'ゆで卵(1個)', kcal: 75, protein: 6.5 },
       { id: 'st7', emoji: '🥩', name: '焼肉・肉料理', kcal: 550, protein: 35.0 },
       { id: 'st8', emoji: '🍱', name: 'コンビニ弁当', kcal: 600, protein: 22.0 }
@@ -881,7 +877,6 @@
 
     function createInitialStartTime() {
       const now = new Date();
-      // Default to ~12h 25m elapsed so Fat Burning stage & progress arc look awesome right away, or user can edit anytime
       return now.getTime() - ((12 * 3600 + 25 * 60 + 10) * 1000);
     }
 
@@ -895,10 +890,10 @@
         const key = getTodayDateStr(d);
         logs[key] = {
           entries: i === 0 ? [] : [
-            { id: 's1_' + i, name: 'プロテイン', kcal: 110, protein: 20, emoji: '🥛', time: '12:30', inEatingWindow: true },
-            { id: 's2_' + i, name: '焼肉・肉料理', kcal: 550, protein: 35, emoji: '🥩', time: '13:15', inEatingWindow: true },
+            { id: 's1_' + i, name: 'プロテインドリンク', kcal: 110, protein: 20, emoji: '🥛', time: '12:30', inEatingWindow: true },
+            { id: 's2_' + i, name: 'たまご焼き(3個)', kcal: 250, protein: 18, emoji: '🥚', time: '13:15', inEatingWindow: true },
             { id: 's3_' + i, name: 'コンビニ弁当', kcal: 600, protein: 22, emoji: '🍱', time: '19:00', inEatingWindow: true },
-            { id: 's4_' + i, name: 'プロテイン', kcal: 110, protein: 20, emoji: '🥛', time: '19:45', inEatingWindow: true }
+            { id: 's4_' + i, name: 'プロテインドリンク', kcal: 110, protein: 20, emoji: '🥛', time: '19:45', inEatingWindow: true }
           ],
           fastedHours: i === 0 ? null : 16.5,
           weight: sampleWeights[6 - i]
@@ -909,7 +904,6 @@
 
     let appState = {
       fasting: {
-        // phase: 'fasting' (🔥 断食中) | 'eating' (🍽️ 食べていい時間カウントダウン)
         phase: 'fasting',
         targetHours: 16,
         startTimeMs: createInitialStartTime(),
@@ -917,7 +911,7 @@
       },
       targets: {
         calories: 2000,
-        protein: 110,
+        protein: 120,
         weight: 67.0
       },
       currentStepperWeight: 71.0,
@@ -944,7 +938,7 @@
             dailyLogs: parsed.dailyLogs || {}
           };
           if (!appState.fasting.phase) {
-            appState.fasting.phase = appState.fasting.isActive === false ? 'eating' : 'fasting';
+            appState.fasting.phase = 'fasting';
           }
         }
       } catch (e) {
@@ -1038,7 +1032,7 @@
     }
 
     // ============================================================================
-    // REAL-TIME TIMER, PHASE SWITCHING (#5), & STAGE COMMENTARY (#1)
+    // REAL-TIME TIMER, PHASE SWITCHING, & STAGE COMMENTARY
     // ============================================================================
     function formatHMS(totalSeconds) {
       const sec = Math.max(0, Math.floor(totalSeconds));
@@ -1086,14 +1080,13 @@
       if (phase === 'eating') {
         iconBox.textContent = '🥗';
         iconBox.className = 'w-11 h-11 rounded-2xl bg-[#F43F5E]/20 border border-[#F43F5E]/40 flex items-center justify-center text-2xl shrink-0';
-        titleEl.textContent = 'EATING WINDOW : 栄養チャージ時間！';
+        titleEl.textContent = 'EATING WINDOW : 食べていい時間！';
         titleEl.className = 'text-xs font-black text-[#F43F5E] tracking-wide';
         nextBadgeEl.textContent = remainEatHours > 0 ? `食事終了まで残り ${remainEatHours.toFixed(1)}h` : '次の断食を開始しましょう';
-        descEl.textContent = 'たんぱく質（プロテイン・卵・肉）をしっかり摂って筋肉と代謝を維持しましょう💪';
+        descEl.textContent = 'プロテインや卵・お肉でたんぱく質をしっかりチャージしましょう💪';
         return;
       }
 
-      // Fasting stages
       let activeIdx = 0;
       if (elapsedFastHours < 4) {
         activeIdx = 0;
@@ -1102,7 +1095,7 @@
         titleEl.textContent = 'STAGE 1 (0-4h) : 消化吸収タイム';
         titleEl.className = 'text-xs font-black text-[#38BDF8] tracking-wide';
         nextBadgeEl.textContent = `脂肪燃焼まであと ${(12 - elapsedFastHours).toFixed(1)}h`;
-        descEl.textContent = '食後の血糖値が落ち着き、消化が進んでいます。お水やお茶で水分補給しましょう💧';
+        descEl.textContent = '消化吸収タイム🍽️ 血糖値が落ち着いてきています';
       } else if (elapsedFastHours < 8) {
         activeIdx = 1;
         iconBox.textContent = '⚡';
@@ -1110,15 +1103,15 @@
         titleEl.textContent = 'STAGE 2 (4-8h) : 糖質エネルギー消費中';
         titleEl.className = 'text-xs font-black text-[#38BDF8] tracking-wide';
         nextBadgeEl.textContent = `脂肪燃焼まであと ${(12 - elapsedFastHours).toFixed(1)}h`;
-        descEl.textContent = '肝臓の糖質を使い始め、胃腸がしっかり休まっています。順調なペースです！';
+        descEl.textContent = '糖質エネルギー消費中⚡ 胃腸が休まり始めています';
       } else if (elapsedFastHours < 12) {
         activeIdx = 2;
-        iconBox.textContent = '🌙';
+        iconBox.textContent = '✨';
         iconBox.className = 'w-11 h-11 rounded-2xl bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center text-2xl shrink-0';
-        titleEl.textContent = 'STAGE 3 (8-12h) : 成長ホルモン分泌準備';
+        titleEl.textContent = 'STAGE 3 (8-12h) : ホルモン準備モード';
         titleEl.className = 'text-xs font-black text-indigo-400 tracking-wide';
         nextBadgeEl.textContent = `🔥燃焼突入まであと ${(12 - elapsedFastHours).toFixed(1)}h`;
-        descEl.textContent = '空腹感とともに体内のクリーンアップが始まります。もうすぐ脂肪燃焼ゾーンです！';
+        descEl.textContent = 'ホルモン準備モード✨ 成長ホルモンが分泌され始めます';
       } else if (elapsedFastHours < 16) {
         activeIdx = 3;
         iconBox.textContent = '🔥';
@@ -1126,7 +1119,7 @@
         titleEl.textContent = 'STAGE 4 (12-16h) : 脂肪燃焼モード突入！';
         titleEl.className = 'text-xs font-black text-[#FF5722] tracking-wide';
         nextBadgeEl.textContent = `♻️16h達成まであと ${(16 - elapsedFastHours).toFixed(1)}h`;
-        descEl.textContent = '糖質が枯渇し、今まさに体脂肪がエネルギーとして燃え始めました！🔥';
+        descEl.textContent = '🔥 脂肪燃焼モード突入！体脂肪がエネルギーとして燃え始めました！';
       } else {
         activeIdx = 4;
         iconBox.textContent = '♻️';
@@ -1134,7 +1127,7 @@
         titleEl.textContent = 'STAGE 5 (16h+) : オートファジー発動中！';
         titleEl.className = 'text-xs font-black text-[#10B981] tracking-wide';
         nextBadgeEl.textContent = '🎉 目標達成・細胞若返り中✨';
-        descEl.textContent = '細胞の生まれ変わりが活性化！最高のコンディションです。いつでも食事へ進めます✨';
+        descEl.textContent = '♻️ オートファジー発動中！細胞が若返り、最高のコンディションです✨';
       }
 
       dotIds.forEach((id, idx) => {
@@ -1152,7 +1145,6 @@
       const eatingWindowHours = 24 - targetHours;
       const nowMs = Date.now();
 
-      // Update Plan Badge
       document.getElementById('planHoursBadge').textContent = targetHours;
       document.getElementById('planRatioSub').textContent = `(${targetHours}:${eatingWindowHours})`;
 
@@ -1205,7 +1197,6 @@
         renderClockGaugeSVG('fasting', startTimeMs, targetHours, elapsedHours);
 
       } else {
-        // FEATURE #5: Eating Window Countdown Mode (8 hours)
         const eatStart = eatingStartTimeMs || nowMs;
         const eatDurationSec = eatingWindowHours * 3600;
         const nextFastStartMs = eatStart + eatDurationSec * 1000;
@@ -1219,7 +1210,7 @@
         document.getElementById('endTimeDisplay').textContent = formatDayAndTime(nextFastStartMs);
 
         phaseDot.className = 'w-2 h-2 rounded-full bg-[#F43F5E]';
-        document.getElementById('timerModeSubLabel').textContent = `🍽️ 食べていい時間（残りカウントダウン）`;
+        document.getElementById('timerModeSubLabel').textContent = '🍽️ 食べていい時間（残りカウントダウン）';
         document.getElementById('mainDigitalTimer').textContent = remainEatSec >= 0 ? formatHMS(remainEatSec) : formatHMS(elapsedEatSec);
         centerEmoji.textContent = '🍽️';
 
@@ -1255,7 +1246,6 @@
       if (phase === 'fasting') {
         fastStartAngle = timeTo24HourAngle(new Date(phaseStartMs));
       } else {
-        // In eating phase, phaseStartMs is the start of the eating window
         const eatStartAngle = timeTo24HourAngle(new Date(phaseStartMs));
         fastStartAngle = (eatStartAngle + (eatingHours / 24) * 360) % 360;
       }
@@ -1263,7 +1253,6 @@
       const fastSweepDeg = (targetHours / 24) * 360;
       const fastEndAngle = (fastStartAngle + fastSweepDeg) % 360;
 
-      // Cyan sector ("食べない時間") & Pink sector ("食べていい時間")
       const cyanPath = describePieSector(CX, CY, R_PIE, fastStartAngle, fastEndAngle);
       const pinkPath = describePieSector(CX, CY, R_PIE, fastEndAngle, fastStartAngle);
 
@@ -1283,7 +1272,6 @@
         <text x="${eatLabelPos.x.toFixed(1)}" y="${(eatLabelPos.y + 13).toFixed(1)}" text-anchor="middle" fill="#FFE4E6" font-size="13" font-weight="800">いい時間</text>
       `;
 
-      // Milestone icons on outer track ring (12h Flame & targetHours Autophagy)
       const flameAngle = fastStartAngle + (12 / 24) * 360;
       const autoAngle = fastStartAngle + (targetHours / 24) * 360;
       const flamePos = polarToCartesian(CX, CY, R_TRACK, flameAngle);
@@ -1303,7 +1291,6 @@
         </g>
       `;
 
-      // Active Progress Arc & Arrow Tip
       const progressArcEl = document.getElementById('progressArcPath');
       const arrowLayerEl = document.getElementById('progressTipArrow');
 
@@ -1346,7 +1333,6 @@
 
     function handleMainFastingAction() {
       if (appState.fasting.phase === 'fasting') {
-        // End fasting -> record achievement -> automatically start 8h Eating Window Countdown!
         const elapsedHours = Math.round(((Date.now() - appState.fasting.startTimeMs) / 3600000) * 10) / 10;
         const todayStr = getTodayDateStr();
         const dayLog = ensureDayLog(todayStr);
@@ -1357,15 +1343,14 @@
         saveState();
         updateFastingTimerUI();
         renderCalendar();
-        showToast(`🍽️ 断食お疲れ様でした！(${elapsedHours}h記録) 8時間の食事タイマーを開始します✨`);
+        showToast(`🍽️ 断食お疲れ様でした！(${elapsedHours}h記録) 食事タイマーを開始します✨`);
       } else {
-        // End eating window -> Start new 16h Fasting cycle!
         appState.fasting.phase = 'fasting';
         appState.fasting.startTimeMs = Date.now();
         appState.fasting.eatingStartTimeMs = null;
         saveState();
         updateFastingTimerUI();
-        showToast(`🔥 ${appState.fasting.targetHours}時間断食をスタートしました！一緒に頑張りましょう！`);
+        showToast(`🔥 ${appState.fasting.targetHours}時間断食をスタートしました！`);
       }
     }
 
@@ -1378,7 +1363,6 @@
       showToast('🔄 現在時刻から断食タイマーをリセットしました');
     }
 
-    // Edit Start Time Modal
     function openEditStartModal() {
       const modal = document.getElementById('editStartModal');
       const targetMs = appState.fasting.phase === 'fasting'
@@ -1543,7 +1527,6 @@
       const targetCal = appState.targets.calories;
       const targetPro = appState.targets.protein;
 
-      // Calorie Meter
       document.getElementById('calCurrentVal').textContent = totals.kcal.toLocaleString();
       document.getElementById('calTargetVal').textContent = targetCal.toLocaleString();
       const calRemain = targetCal - totals.kcal;
@@ -1558,7 +1541,6 @@
       const calPct = Math.min(100, Math.round((totals.kcal / targetCal) * 100));
       document.getElementById('calProgressBar').style.width = `${calPct}%`;
 
-      // Protein Meter
       const proRounded = (Math.round(totals.protein * 10) / 10).toFixed(1);
       document.getElementById('proCurrentVal').textContent = proRounded;
       document.getElementById('proTargetVal').textContent = targetPro;
@@ -1669,7 +1651,7 @@
     }
 
     // ============================================================================
-    // TAB 3: STEPPER WEIGHT TRACKER & LINE CHART (#4) + CALENDAR
+    // TAB 3: STEPPER WEIGHT TRACKER & LINE CHART + CALENDAR
     // ============================================================================
     function getLatestRecordedWeight() {
       const keys = Object.keys(appState.dailyLogs).sort();
@@ -1728,7 +1710,6 @@
       const goalW = appState.targets.weight;
       document.getElementById('chartRangeLabel').textContent = `目標ライン: ${goalW.toFixed(1)}kg`;
 
-      // Collect last 14 entries with weight
       const points = Object.keys(appState.dailyLogs)
         .sort()
         .filter(k => typeof appState.dailyLogs[k]?.weight === 'number')
@@ -1777,14 +1758,9 @@
       });
 
       svg.innerHTML = `
-        <!-- Goal Dashed Line -->
         <line x1="${padL}" y1="${goalY.toFixed(1)}" x2="${360 - padR}" y2="${goalY.toFixed(1)}" stroke="#10B981" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.7" />
         <text x="4" y="${(goalY + 3).toFixed(1)}" fill="#10B981" font-size="9" font-weight="800">${goalW.toFixed(0)}kg</text>
-
-        <!-- Trend Polyline -->
         ${points.length > 1 ? `<polyline fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${polyPoints}" />` : ''}
-
-        <!-- Data Points -->
         ${circlesHtml}
       `;
     }
@@ -2069,9 +2045,6 @@
       }
     });
 
-    // ============================================================================
-    // INITIALIZE APP ON LOAD
-    // ============================================================================
     window.onload = function() {
       loadState();
       renderStatic24HourDial();
