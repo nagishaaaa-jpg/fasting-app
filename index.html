@@ -354,7 +354,7 @@
             <h2 id="calorieDateTitle" class="text-base font-black text-white tabular-nums">今日</h2>
             <span id="calorieTabWindowBadge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#38BDF8]/20 text-[#38BDF8]">断食中💧</span>
           </div>
-          <p id="calorieSubDesc" class="text-[11px] font-bold text-slate-400">文字入力ゼロ！ボタンを押すだけで即加算⚡</p>
+          <p id="calorieSubDesc" class="text-[11px] font-bold text-slate-400">定番ワンタップ＆数値の直接入力で正確・スピーディに⚡</p>
         </div>
         <button onclick="changeActiveDate(1)" class="tap-btn w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 font-bold">
           ›
@@ -428,30 +428,33 @@
         <div id="quickStampsGrid" class="grid grid-cols-2 gap-2"></div>
       </div>
 
-      <!-- Section 2: Rough Number Quick-Add Buttons -->
-      <div class="bg-slate-800/70 rounded-2xl p-3.5 mb-4 border border-slate-700/80">
-        <h3 class="text-xs font-extrabold text-slate-300 mb-2">🔢 ざっくり加算（コンビニ・外食・チートデイ用）</h3>
-        
-        <div class="grid grid-cols-3 gap-1.5 mb-2">
-          <button onclick="addQuickEntry('ざっくり +100kcal', 100, 0, '🔥')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-2 text-center">
-            <span class="block text-xs font-black text-[#FF5722] tabular-nums">+100 kcal</span>
-          </button>
-          <button onclick="addQuickEntry('ざっくり +300kcal', 300, 0, '🔥')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-2 text-center">
-            <span class="block text-xs font-black text-[#FF5722] tabular-nums">+300 kcal</span>
-          </button>
-          <button onclick="addQuickEntry('ざっくり +500kcal', 500, 0, '🔥')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-2 text-center">
-            <span class="block text-xs font-black text-[#FF5722] tabular-nums">+500 kcal</span>
-          </button>
+      <!-- Section 2: Direct Manual Entry Form (メニュー名 + カロリー + タンパク質) -->
+      <div class="bg-slate-800/90 rounded-3xl p-4 mb-4 border border-slate-700/90 shadow-lg">
+        <div class="flex items-center justify-between mb-2.5">
+          <h3 class="text-xs font-extrabold text-slate-200 flex items-center gap-1.5">
+            <span>✍️ カロリー＆たんぱく質 直接入力</span>
+          </h3>
+          <span class="text-[10px] font-bold text-slate-400">成分表を見て1発記録</span>
         </div>
 
-        <div class="grid grid-cols-2 gap-1.5">
-          <button onclick="addQuickEntry('たんぱく質 +10g', 40, 10, '💪')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-1.5 text-center">
-            <span class="text-xs font-black text-[#10B981] tabular-nums">P +10g</span>
-            <span class="block text-[9px] text-slate-400">(+40kcal)</span>
-          </button>
-          <button onclick="addQuickEntry('たんぱく質 +20g', 80, 20, '💪')" class="tap-btn bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl py-1.5 text-center">
-            <span class="text-xs font-black text-[#10B981] tabular-nums">P +20g</span>
-            <span class="block text-[9px] text-slate-400">(+80kcal)</span>
+        <div class="space-y-2.5">
+          <div>
+            <input id="directEntryName" type="text" placeholder="メニュー名 (例: 牛丼、サラダなど / 空欄でもOK)" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs font-bold text-white placeholder-slate-500 focus:outline-none focus:border-[#38BDF8]" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div class="relative">
+              <input id="directEntryKcal" type="number" inputmode="decimal" placeholder="カロリー" class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-3.5 pr-12 py-2.5 text-sm font-black text-white placeholder-slate-500 tabular-nums focus:outline-none focus:border-[#FF5722]" />
+              <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11px] font-extrabold text-[#FF5722]">kcal</span>
+            </div>
+            <div class="relative">
+              <input id="directEntryProtein" type="number" step="0.1" inputmode="decimal" placeholder="たんぱく質" class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-3.5 pr-10 py-2.5 text-sm font-black text-[#10B981] placeholder-slate-500 tabular-nums focus:outline-none focus:border-[#10B981]" />
+              <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-[11px] font-extrabold text-[#10B981]">P (g)</span>
+            </div>
+          </div>
+
+          <button onclick="submitDirectCalorieEntry()" class="tap-btn w-full bg-gradient-to-r from-[#FF5722] to-[#F97316] text-white font-black text-xs py-3 rounded-xl shadow-md flex items-center justify-center gap-1.5">
+            <span>＋ この内容で記録に追加する</span>
           </button>
         </div>
       </div>
@@ -521,13 +524,16 @@
         </div>
       </div>
 
-      <!-- Weight Trend Mini Line Chart -->
-      <div class="bg-slate-800/90 rounded-3xl p-4 shadow-lg border border-slate-700/80 mb-4">
+      <!-- Weight Trend Mini Line Chart (Tap to Open Vertical Fullscreen Chart) -->
+      <div onclick="openFullscreenWeightModal()" class="tap-btn cursor-pointer bg-slate-800/90 hover:bg-slate-800 rounded-3xl p-4 shadow-lg border border-slate-700/80 mb-4 group">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="text-xs font-extrabold text-slate-300 flex items-center gap-1">
-            <span>📈 体重推移グラフ (記録した日のみ表示)</span>
+          <h3 class="text-xs font-extrabold text-slate-200 flex items-center gap-1.5">
+            <span>📈 体重推移グラフ</span>
+            <span class="text-[10px] font-extrabold bg-[#38BDF8]/20 text-[#38BDF8] px-2 py-0.5 rounded-full flex items-center gap-0.5 group-hover:bg-[#38BDF8] group-hover:text-slate-950 transition">
+              🔍 タップで縦全画面拡大
+            </span>
           </h3>
-          <span id="chartRangeLabel" class="text-[10px] font-bold text-slate-400 tabular-nums">目標ライン: 65.0kg</span>
+          <span id="chartRangeLabel" class="text-[10px] font-bold text-slate-400 tabular-nums">目標: 65.0kg</span>
         </div>
         <div class="w-full h-36 bg-slate-900/90 rounded-2xl p-2 border border-slate-800 relative flex items-center justify-center">
           <svg id="weightChartSvg" viewBox="0 0 360 120" class="w-full h-full overflow-visible"></svg>
@@ -912,6 +918,60 @@
       </div>
       <button onclick="closeStageGuideModal()" class="tap-btn w-full py-2.5 rounded-xl bg-[#FF5722] text-white font-black text-sm">閉じる</button>
     </div>
+  </div>
+
+  <!-- ==================== MODAL 4: スマホ縦持ち全画面・体重推移グラフモーダル ==================== -->
+  <div id="fullscreenWeightModal" class="hidden fixed inset-0 bg-[#070B14]/98 backdrop-blur-md z-50 flex flex-col justify-between p-4 max-w-[480px] mx-auto">
+    <!-- Top Header -->
+    <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-lg">📈</span>
+          <h3 class="text-base font-black text-white">体重推移グラフ (全画面表示)</h3>
+        </div>
+        <p id="fsChartSubInfo" class="text-[11px] font-bold text-slate-400 mt-0.5">スマホ縦画面ワイド表示</p>
+      </div>
+      <button onclick="closeFullscreenWeightModal()" class="tap-btn w-9 h-9 rounded-2xl bg-slate-800 border border-slate-700 text-slate-200 font-black text-base flex items-center justify-center">
+        ✕
+      </button>
+    </div>
+
+    <!-- Summary KPI Row inside Fullscreen Modal -->
+    <div class="grid grid-cols-4 gap-2 my-3">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-2.5 text-center">
+        <span class="block text-[9px] font-bold text-slate-400">スタート体重</span>
+        <span id="fsStartWeight" class="text-sm font-black text-slate-200 tabular-nums">- kg</span>
+      </div>
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-2.5 text-center">
+        <span class="block text-[9px] font-bold text-slate-400">現在 (最新)</span>
+        <span id="fsLatestWeight" class="text-sm font-black text-[#38BDF8] tabular-nums">- kg</span>
+      </div>
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-2.5 text-center">
+        <span class="block text-[9px] font-bold text-slate-400">トータル増減</span>
+        <span id="fsTotalDiff" class="text-sm font-black text-[#10B981] tabular-nums">- kg</span>
+      </div>
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-2.5 text-center">
+        <span class="block text-[9px] font-bold text-slate-400">目標まで</span>
+        <span id="fsGoalDiff" class="text-sm font-black text-[#FF5722] tabular-nums">- kg</span>
+      </div>
+    </div>
+
+    <!-- Giant Vertical Chart Container -->
+    <div class="flex-1 bg-slate-900/90 rounded-3xl border border-slate-800 p-3 flex flex-col justify-between relative overflow-hidden my-1">
+      <div class="flex items-center justify-between text-[11px] font-bold text-slate-400 px-1">
+        <span>直近の記録推移（高低差ワイド表示）</span>
+        <span id="fsGoalLineBadge" class="text-[#10B981] font-extrabold tabular-nums">--- 目標 65.0kg</span>
+      </div>
+      <div class="flex-1 w-full flex items-center justify-center my-2">
+        <svg id="fullscreenWeightChartSvg" viewBox="0 0 360 420" class="w-full h-full overflow-visible"></svg>
+      </div>
+      <div id="fsWeightHistoryPills" class="flex items-center gap-1.5 overflow-x-auto py-1.5 px-1 border-t border-slate-800/80 text-[10px] tabular-nums"></div>
+    </div>
+
+    <!-- Bottom Close Button -->
+    <button onclick="closeFullscreenWeightModal()" class="tap-btn w-full py-3.5 mt-3 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-700 border border-slate-600 text-white font-black text-sm shadow-lg">
+      ✕ 元のカレンダー画面に戻る
+    </button>
   </div>
   <script>
     // ============================================================================
@@ -1596,7 +1656,7 @@
     }
 
     // ============================================================================
-    // TAB 2: ONE-TAP CALORIE & PROTEIN LOGGER
+    // TAB 2: ONE-TAP & DIRECT CALORIE / PROTEIN LOGGER
     // ============================================================================
     function formatJapaneseDateHeader(dateStr) {
       const todayStr = getTodayDateStr();
@@ -1653,6 +1713,27 @@
       const st = appState.stamps.find(s => s.id === stampId);
       if (!st) return;
       addQuickEntry(st.name, st.kcal, st.protein, st.emoji);
+    }
+
+    function submitDirectCalorieEntry() {
+      const nameInput = document.getElementById('directEntryName');
+      const kcalInput = document.getElementById('directEntryKcal');
+      const proInput = document.getElementById('directEntryProtein');
+
+      const name = (nameInput.value || '').trim() || '食事記録';
+      const kcal = parseFloat(kcalInput.value) || 0;
+      const protein = parseFloat(proInput.value) || 0;
+
+      if (kcal <= 0 && protein <= 0) {
+        showToast('⚠️ カロリーまたはたんぱく質を入力してください');
+        return;
+      }
+
+      addQuickEntry(name, Math.round(kcal), Math.round(protein * 10) / 10, '🍽️');
+
+      nameInput.value = '';
+      kcalInput.value = '';
+      proInput.value = '';
     }
 
     function addQuickEntry(name, kcal, protein, emoji = '🍽️') {
@@ -1763,7 +1844,7 @@
       if (dayLog.entries.length === 0) {
         listEl.innerHTML = `
           <div class="bg-slate-900/50 border border-dashed border-slate-700 rounded-2xl p-5 text-center text-xs text-slate-400">
-            上の定番ボタンをタップすると、ここに記録が追加されます🥛🍙
+            定番ボタンまたは上の直接入力から記録を追加できます🥛✍️
           </div>
         `;
       } else {
@@ -1852,15 +1933,23 @@
     }
 
     // ============================================================================
-    // TAB 3: STEPPER WEIGHT TRACKER & LINE CHART + CALENDAR
+    // TAB 3: STEPPER WEIGHT TRACKER & LINE CHART + FULLSCREEN CHART + CALENDAR
     // ============================================================================
+    function getRecordedWeightPoints(limit = 14) {
+      const allKeys = Object.keys(appState.dailyLogs)
+        .sort()
+        .filter(k => typeof appState.dailyLogs[k]?.weight === 'number' && !isNaN(appState.dailyLogs[k].weight));
+      const sliced = limit ? allKeys.slice(-limit) : allKeys;
+      return sliced.map(k => ({
+        dateKey: k,
+        label: k.slice(5).replace('-', '/'),
+        weight: appState.dailyLogs[k].weight
+      }));
+    }
+
     function getLatestRecordedWeight() {
-      const keys = Object.keys(appState.dailyLogs).sort();
-      for (let i = keys.length - 1; i >= 0; i--) {
-        const w = appState.dailyLogs[keys[i]]?.weight;
-        if (typeof w === 'number' && !isNaN(w)) return w;
-      }
-      return 70.0;
+      const pts = getRecordedWeightPoints(1);
+      return pts.length > 0 ? pts[0].weight : 70.0;
     }
 
     function syncStepperWithSelectedDate() {
@@ -1974,17 +2063,9 @@
     function renderWeightChart() {
       const svg = document.getElementById('weightChartSvg');
       const goalW = appState.targets.weight;
-      document.getElementById('chartRangeLabel').textContent = `目標ライン: ${goalW.toFixed(1)}kg`;
+      document.getElementById('chartRangeLabel').textContent = `目標: ${goalW.toFixed(1)}kg`;
 
-      const points = Object.keys(appState.dailyLogs)
-        .sort()
-        .filter(k => typeof appState.dailyLogs[k]?.weight === 'number' && !isNaN(appState.dailyLogs[k].weight))
-        .slice(-14)
-        .map(k => ({
-          dateKey: k,
-          label: k.slice(5).replace('-', '/'),
-          weight: appState.dailyLogs[k].weight
-        }));
+      const points = getRecordedWeightPoints(14);
 
       if (points.length === 0) {
         svg.innerHTML = `
@@ -2031,6 +2112,139 @@
         <text x="4" y="${(goalY + 3).toFixed(1)}" fill="#10B981" font-size="9" font-weight="800">${goalW.toFixed(0)}kg</text>
         ${points.length > 1 ? `<polyline fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${polyPoints}" />` : ''}
         ${circlesHtml}
+      `;
+    }
+
+    // スマホ縦持ち全画面・体重グラフモーダル表示
+    function openFullscreenWeightModal() {
+      document.getElementById('fullscreenWeightModal').classList.remove('hidden');
+      renderFullscreenWeightChart();
+    }
+
+    function closeFullscreenWeightModal() {
+      document.getElementById('fullscreenWeightModal').classList.add('hidden');
+    }
+
+    function renderFullscreenWeightChart() {
+      const svg = document.getElementById('fullscreenWeightChartSvg');
+      const goalW = appState.targets.weight;
+      const allPoints = getRecordedWeightPoints(0); // 全履歴
+      const points = allPoints.slice(-20); // 直近最大20日分を見やすく縦ワイド描画
+
+      document.getElementById('fsGoalLineBadge').textContent = `--- 目標 ${goalW.toFixed(1)}kg`;
+
+      if (allPoints.length === 0) {
+        document.getElementById('fsStartWeight').textContent = '- kg';
+        document.getElementById('fsLatestWeight').textContent = '- kg';
+        document.getElementById('fsTotalDiff').textContent = '- kg';
+        document.getElementById('fsGoalDiff').textContent = '- kg';
+        document.getElementById('fsWeightHistoryPills').innerHTML = '<span class="text-slate-500">まだ体重記録がありません</span>';
+        svg.innerHTML = `
+          <text x="180" y="200" text-anchor="middle" fill="#94A3B8" font-size="14" font-weight="800">まだ体重記録がありません⚖️</text>
+          <text x="180" y="226" text-anchor="middle" fill="#64748B" font-size="11" font-weight="600">カレンダー画面で体重を記録すると、ここに大きく表示されます</text>
+        `;
+        return;
+      }
+
+      const firstW = allPoints[0].weight;
+      const latestW = allPoints[allPoints.length - 1].weight;
+      const totalDiff = Math.round((latestW - firstW) * 10) / 10;
+      const goalDiff = Math.round((latestW - goalW) * 10) / 10;
+
+      document.getElementById('fsStartWeight').textContent = `${firstW.toFixed(1)}kg`;
+      document.getElementById('fsLatestWeight').textContent = `${latestW.toFixed(1)}kg`;
+
+      const totalDiffEl = document.getElementById('fsTotalDiff');
+      totalDiffEl.textContent = `${totalDiff > 0 ? '+' : ''}${totalDiff.toFixed(1)}kg`;
+      totalDiffEl.className = `text-sm font-black tabular-nums ${totalDiff <= 0 ? 'text-[#10B981]' : 'text-[#F43F5E]'}`;
+
+      const goalDiffEl = document.getElementById('fsGoalDiff');
+      goalDiffEl.textContent = goalDiff > 0 ? `あと${goalDiff.toFixed(1)}kg` : '達成🎉';
+
+      document.getElementById('fsChartSubInfo').textContent = `全 ${allPoints.length} 日分の記録 （${allPoints[0].label} 〜 ${allPoints[allPoints.length - 1].label}）`;
+
+      // 下部の履歴ピル一覧（新しい順）
+      const pillsEl = document.getElementById('fsWeightHistoryPills');
+      pillsEl.innerHTML = [...allPoints].reverse().map(p => `
+        <div class="shrink-0 bg-slate-800/90 border border-slate-700 rounded-xl px-2.5 py-1 flex items-center gap-1.5">
+          <span class="text-slate-400 font-bold">${p.label}</span>
+          <span class="text-white font-black">${p.weight.toFixed(1)}kg</span>
+        </div>
+      `).join('');
+
+      // 縦長SVG (360 x 420) の描画
+      // 目標体重と実測値が離れていても変化の傾きがダイナミックに見えるようスケール最適化
+      const dataWeights = points.map(p => p.weight);
+      const minDataW = Math.min(...dataWeights, goalW);
+      const maxDataW = Math.max(...dataWeights, goalW);
+      const minW = Math.floor((minDataW - 0.8) * 2) / 2;
+      const maxW = Math.ceil((maxDataW + 0.8) * 2) / 2;
+      const range = Math.max(1.5, maxW - minW);
+
+      const padL = 42;
+      const padR = 20;
+      const padT = 30;
+      const padB = 40;
+      const W = 360 - padL - padR;
+      const H = 420 - padT - padB;
+
+      const getX = (idx) => points.length === 1 ? padL + W / 2 : padL + (idx / (points.length - 1)) * W;
+      const getY = (w) => padT + H - ((w - minW) / range) * H;
+
+      // 横の補助グリッド線（5段階）
+      let gridHtml = '';
+      const steps = 5;
+      for (let s = 0; s <= steps; s++) {
+        const wVal = minW + (range * s) / steps;
+        const yPos = getY(wVal);
+        gridHtml += `
+          <line x1="${padL}" y1="${yPos.toFixed(1)}" x2="${360 - padR}" y2="${yPos.toFixed(1)}" stroke="#1E293B" stroke-width="1" />
+          <text x="${padL - 6}" y="${(yPos + 4).toFixed(1)}" text-anchor="end" fill="#64748B" font-size="10" font-weight="700" class="tabular-nums">${wVal.toFixed(1)}</text>
+        `;
+      }
+
+      const goalY = getY(goalW);
+      const polyPoints = points.map((p, i) => `${getX(i).toFixed(1)},${getY(p.weight).toFixed(1)}`).join(' ');
+
+      // グラデーション塗りつぶしエリアパス
+      const firstX = getX(0).toFixed(1);
+      const lastX = getX(points.length - 1).toFixed(1);
+      const bottomY = (padT + H).toFixed(1);
+      const areaPath = points.length > 1
+        ? `M ${firstX},${bottomY} L ${polyPoints.split(' ').join(' L ')} L ${lastX},${bottomY} Z`
+        : '';
+
+      let nodesHtml = '';
+      points.forEach((p, i) => {
+        const cx = getX(i).toFixed(1);
+        const cy = getY(p.weight).toFixed(1);
+        const isLast = i === points.length - 1;
+        const showLabel = points.length <= 10 || i === 0 || isLast || i % 2 === 0;
+
+        nodesHtml += `
+          <circle cx="${cx}" cy="${cy}" r="${isLast ? 6 : 4.5}" fill="${isLast ? '#10B981' : '#38BDF8'}" stroke="#090D16" stroke-width="2" />
+          ${showLabel ? `
+            <rect x="${(Number(cx) - 18).toFixed(1)}" y="${(Number(cy) - 25).toFixed(1)}" width="36" height="16" rx="5" fill="#0F172A" stroke="${isLast ? '#10B981' : '#334155'}" stroke-width="1" />
+            <text x="${cx}" y="${(Number(cy) - 14).toFixed(1)}" text-anchor="middle" fill="${isLast ? '#6EE7B7' : '#F8FAFC'}" font-size="10" font-weight="900" class="tabular-nums">${p.weight.toFixed(1)}</text>
+            <text x="${cx}" y="${padT + H + 22}" text-anchor="middle" fill="#94A3B8" font-size="10" font-weight="800" class="tabular-nums">${p.label}</text>
+          ` : ''}
+        `;
+      });
+
+      svg.innerHTML = `
+        <defs>
+          <linearGradient id="fsWeightAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.32" />
+            <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0" />
+          </linearGradient>
+        </defs>
+        ${gridHtml}
+        <line x1="${padL}" y1="${goalY.toFixed(1)}" x2="${360 - padR}" y2="${goalY.toFixed(1)}" stroke="#10B981" stroke-width="2" stroke-dasharray="5 4" />
+        <rect x="${360 - padR - 64}" y="${(goalY - 18).toFixed(1)}" width="64" height="16" rx="4" fill="#064E3B" />
+        <text x="${360 - padR - 32}" y="${(goalY - 7).toFixed(1)}" text-anchor="middle" fill="#6EE7B7" font-size="9.5" font-weight="900" class="tabular-nums">目標 ${goalW.toFixed(1)}kg</text>
+        ${areaPath ? `<path d="${areaPath}" fill="url(#fsWeightAreaGrad)" />` : ''}
+        ${points.length > 1 ? `<polyline fill="none" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="${polyPoints}" />` : ''}
+        ${nodesHtml}
       `;
     }
 
