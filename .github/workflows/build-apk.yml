@@ -1,45 +1,57 @@
 name: Build Android APK
-​on:
-workflow_dispatch: # 手動実行ボタン
-push:
-branches:
-- main
-paths:
-- '.github/workflows/build-apk.yml'
-- 'index.html'
-​jobs:
-build-apk:
-runs-on: ubuntu-latest
-​steps:
-- name: リポジトリのコードを取得
-uses: actions/checkout@v4
-​- name: Node.jsのセットアップ
-uses: actions/setup-node@v4
-with:
-node-version: 20
-​- name: Java (JDK 17) のセットアップ
-uses: actions/setup-java@v4
-with:
-distribution: 'temurin'
-java-version: '17'
-​- name: Webアセットの準備
-run: |
-mkdir -p www
-cp index.html www/
-​- name: Capacitorプロジェクト初期化とAndroid追加
-run: |
-npm init -y
-npm install @capacitor/core@latest @capacitor/cli@latest @capacitor/android@latest
-npx cap init "AKITO断食" "com.akito.fastingapp" --web-dir www
-npx cap add android
-npx cap sync android
-​- name: Android APKのビルド
-run: |
-cd android
-chmod +x gradlew
-./gradlew assembleDebug --no-daemon
-​- name: 完成したAPKファイルを保存
-uses: actions/upload-artifact@v4
-with:
-name: akito-fasting-app
-path: android/app/build/outputs/apk/debug/app-debug.apk
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/build-apk.yml'
+      - 'index.html'
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリのコードを取得
+        uses: actions/checkout@v4
+
+      - name: Node.jsのセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Java (JDK 17) のセットアップ
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Android SDKのセットアップ
+        uses: android-actions/setup-android@v3
+
+      - name: Webアセットの準備
+        run: |
+          mkdir -p www
+          cp index.html www/
+
+      - name: Capacitorでプロジェクト生成（競合回避フラグ付き）
+        run: |
+          npm init -y
+          npm install --save @capacitor/core @capacitor/cli @capacitor/android --legacy-peer-deps
+          npx cap init "AKITO断食" "com.akito.fastingapp" --web-dir www
+          npx cap add android
+          npx cap sync android
+
+      - name: Android APKのビルド
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug --stacktrace --no-daemon
+
+      - name: 完成したAPKファイルを保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: akito-fasting-app
+          path: android/app/build/outputs/apk/debug/app-debug.apk
