@@ -1,17 +1,36 @@
 {
-  "name": "断食＆ボディメイク",
-  "short_name": "断食",
-  "description": "あきと専用 16時間断食＆カロリー・体重管理アプリ",
-  "start_url": "./index.html",
+  "background_color": "#ffffff",
+  "dir": "ltr",
   "display": "standalone",
-  "background_color": "#0B1120",
+  "name": "AKITO断食",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "AKITO断食",
+  "start_url": "/",
   "theme_color": "#0B1120",
-  "icons": [
+  「アイコン」：[
     {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%230F172A'/%3E%3Ccircle cx='256' cy='256' r='160' fill='none' stroke='%23FF5722' stroke-width='28'/%3E%3Ctext x='256' y='320' font-size='200' text-anchor='middle'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E",
-      "sizes": "512x512",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><linearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%231E293B'/><stop offset='50%25' stop-color='%230F172A'/><stop offset='100%25' stop-color='%23090D16'/></linearGradient><linearGradient id='flame' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%23EA580C'/><stop offset='60%25' stop-color='%23FF5722'/><stop offset='100%25' stop-color='%23FDBA74'/></linearGradient><filter id='glowCyan' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='0' stdDeviation='10' flood-color='%2338BDF8' flood-opacity='0.85'/></filter><filter id='glowOrange' x='-20%25' y='-20%25' width='140%25' height='140%25'><feDropShadow dx='0' dy='0' stdDeviation='12' flood-color='%23FF5722' flood-opacity='0.9'/></filter></defs><rect width='512' height='512' rx='116' fill='url(%23bg)'/><rect x='22' y='22' width='468' height='468' rx='98' fill='none' stroke='%2338BDF8' stroke-width='4' stroke-opacity='0.45'/><circle cx='256' cy='256' r='164' fill='none' stroke='%231E293B' stroke-width='30'/><path d='M 225 95 A 164 164 0 1 0 385 355' fill='none' stroke='%2338BDF8' stroke-width='26' stroke-linecap='round' filter='url(%23glowCyan)'/><path d='M 287 95 A 164 164 0 0 1 410 312' fill='none' stroke='%23FF5722' stroke-width='28' stroke-linecap='round' filter='url(%23glowOrange)'/><path d='M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z' fill='url(%23flame)' filter='url(%23glowOrange)'/></svg>",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 0,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><linearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%231E293B'/><stop offset='50%25' stop-color='%230F172A'/><stop offset='100%25' stop-color='%23090D16'/></linearGradient><linearGradient id='flame' x1='0%25' y1='100%25' x2='0%25' y2='0%25'><stop offset='0%25' stop-color='%23EA580C'/><stop offset='60%25' stop-color='%23FF5722'/><stop offset='100%25' stop-color='%23FDBA74'/></linearGradient></defs><rect width='512' height='512' rx='116' fill='url(%23bg)'/><rect x='22' y='22' width='468' height='468' rx='98' fill='none' stroke='%2338BDF8' stroke-width='6' stroke-opacity='0.5'/><circle cx='256' cy='256' r='164' fill='none' stroke='%231E293B' stroke-width='30'/><path d='M 225 95 A 164 164 0 1 0 385 355' fill='none' stroke='%2338BDF8' stroke-width='26' stroke-linecap='round'/><path d='M 287 95 A 164 164 0 0 1 410 312' fill='none' stroke='%23FF5722' stroke-width='28' stroke-linecap='round'/><path d='M256 128 C256 128 346 196 346 284 C346 342 304 384 256 384 C208 384 166 342 166 284 C166 242 192 208 192 208 C192 208 188 250 214 262 C202 214 256 128 256 128 Z' fill='url(%23flame)'/></svg>",
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 0,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
     }
   ]
 }
